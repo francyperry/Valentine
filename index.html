@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>YAY!!!</title>
+  <title>Be my Valentine?</title>
   <style>
     body {
-      background: #f7c6d0;
+      background: linear-gradient(135deg, #f7c6d0, #f3a6b8);
       font-family: Arial, sans-serif;
       height: 100vh;
       margin: 0;
@@ -13,19 +13,61 @@
       justify-content: center;
       align-items: center;
     }
-    .container {
+    .card {
       background: white;
       padding: 40px;
-      border-radius: 16px;
+      border-radius: 20px;
       text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      width: 320px;
+    }
+    .buttons {
+      margin-top: 30px;
+      position: relative;
+      height: 80px;
+    }
+    button {
+      font-size: 18px;
+      padding: 10px 24px;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+    }
+    .yes {
+      background: #e63946;
+      color: white;
+    }
+    .no {
+      background: #ddd;
+      position: absolute;
+      left: 160px;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>💖 YAY!!! 💖</h1>
-    <p>Best decision ever 😘</p>
-    <p style="margin-top:20px;">I love you ❤️</p>
+
+  <div class="card">
+    <h2>Will you be<br>my Valentine? ❤️</h2>
+
+    <div class="buttons">
+      <button class="yes" onclick="goYes()">YES</button>
+      <button class="no" id="noBtn">NO</button>
+    </div>
   </div>
+
+  <script>
+    const noBtn = document.getElementById("noBtn");
+
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.random() * 200 - 100;
+      const y = Math.random() * 120 - 60;
+      noBtn.style.transform = `translate(${x}px, ${y}px)`;
+    });
+
+    function goYes() {
+      window.location.href = "final.html";
+    }
+  </script>
+
 </body>
 </html>
